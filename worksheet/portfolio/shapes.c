@@ -54,7 +54,7 @@ float triangleArea(Triangle t) {
     return result;
 }
 
-float samePoint(Point p1, Point p2) {
+bool samePoint(Point p1, Point p2) {
     float dx = p1.x - p2.x;
     float dy = p1.y - p2.y;
     if(dx == 0 && dy == 0) {
@@ -64,7 +64,7 @@ float samePoint(Point p1, Point p2) {
     }
 }
 
-float pointInLine(Point p, Line l) {
+bool pointInLine(Point p, Line l) {
     if(samePoint(p, l.p[0]) || samePoint(p, l.p[1])) {
         return true;
     } else {
@@ -72,7 +72,7 @@ float pointInLine(Point p, Line l) {
     }
 }
 
-float pointInTriangle(Point p, Triangle t) {
+bool pointInTriangle(Point p, Triangle t) {
     if(samePoint(p, t.p[0]) || samePoint(p, t.p[1]) || samePoint(p, t.p[2])) {
         return true;
     } else {
